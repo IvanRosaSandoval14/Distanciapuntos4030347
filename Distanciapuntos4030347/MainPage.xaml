@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodel="clr-namespace:Distanciapuntos4030347.ViewModels"
+             x:Class="Distanciapuntos4030347.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image Source="dotnet_bot.png" 
+                 HeightRequest="185" 
+                 Aspect="AspectFit" 
+                 SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label Text="Ingrese Coordenadas de los Puntos:" 
+                 Style="{StaticResource Headline}" 
+                 SemanticProperties.HeadingLevel="Level1" />
+
+            <Label Text="Ingrese Coordenadas del punto 1 :"  />
+
+            <Entry Placeholder="Ingrese X1" 
+                 Keyboard="Numeric" 
+                 Text="{Binding X1}" />
+            <Entry Placeholder="Ingrese Y1" 
+                 Keyboard="Numeric" 
+                 Text="{Binding Y1}" />
+
+            <Label Text="Ingrese Coordenadas del punto 2 :" />
+            <Entry Placeholder="Ingrese X2" 
+                 Keyboard="Numeric" 
+                 Text="{Binding X2}" />
+            <Entry Placeholder="Ingrese Y2" 
+                 Keyboard="Numeric" 
+                 Text="{Binding Y2}" />
+
+            <Button Text="Calcular Distancia" 
+                  Command="{Binding CalculateDistanceCommand}" 
+                  HorizontalOptions="Fill" />
+
+            <Label Text="{Binding Result}" 
+                 Style="{StaticResource SubHeadline}" 
+                 SemanticProperties.HeadingLevel="Level2" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
